@@ -7,6 +7,8 @@ The script `run_analysis.R` acts on the data and creates the required tidy data 
 1. The data has been downloaded from the source <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 2. The data has been downloaded and unpacked in a folder called `UCI HAR Dataset` 
 
+The script then performs the following:
+
 1. Reads in the activity and features
 2. Reads the training data, training subject and activity, and names the variables accordingly.
 3. Combines the training data, subject and activity in one data frame.
