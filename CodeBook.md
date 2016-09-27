@@ -14,7 +14,9 @@ This is the Codebook for the tidy data set `tidy.txt`
   * `6 = LAYING`
 
 
-* `tBodyAcc-mean()-X` 
+The following feature variables are described more thoroughly in `/UCI HAR Dataset/README.txt` and `/UCI HAR Dataset/features_info.txt`
+
+* `tBodyAcc-mean()-X`
 * `tBodyAcc-mean()-Y` 
 * `tBodyAcc-mean()-Z` 
 * `tBodyAcc-std()-X` 
