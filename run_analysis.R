@@ -1,4 +1,4 @@
-setwd("~/Desktop/R_class/Getting+cleaning/week4_peer/UCI HAR Dataset/")
+setwd(paste(getwd(),"/UCI HAR Dataset",sep=""))
 
 activity <- read.table(file="activity_labels.txt")
 activityValues <- activity[,2]
@@ -34,12 +34,23 @@ totalData <- rbind(trainingData, testData)
 
 ## combine the test and training data sets
 
-required <- c("subject", "activity", "mean()", "std()")
+required <- c("subject", "activity", "mean\\(\\)", "std\\(\\)")
 meanStdData <- totalData[, grepl( paste(required, collapse='|') , names(totalData))]
+meanStdData$activity <- factor(meanStdData$activity, levels=activity[,1], labels=activity[,2])
+meanStdData$subject <- as.factor(meanStdData$subject)
 
-## subset out the required data, on only means and st.devs.
+## subset out the required data, on only means and st.devs; makes subject and 
+## activity into factor variables.
 
-newData <- aggregate(meanStdData, by=c(""))
 
-newData <- ddply(meanStdData, .variables = c("subject", "activity"), .fun=mean)
+library(reshape2)
+meanStdDataMelt <- melt(meanStdData, id = c("subject", "activity"))
+meanStdDataMean <- dcast(meanStdDataMelt, subject + activity ~ variable, mean)
+
+## takes required mean over subject and activity
+
+setwd("../")
+write.table(meanStdDataMean, file="tidy.txt", row.name=FALSE)
+
+
 
