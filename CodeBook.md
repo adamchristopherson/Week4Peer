@@ -14,7 +14,7 @@ This is the Codebook for the tidy data set `tidy.txt`
 ..* `6 = LAYING`
 
 
-* tBodyAcc-mean()-X` 
+* `tBodyAcc-mean()-X` 
 *`tBodyAcc-mean()-Y` 
 *`tBodyAcc-mean()-Z` 
 *`tBodyAcc-std()-X` 
@@ -88,5 +88,4 @@ This is the Codebook for the tidy data set `tidy.txt`
 
 
 
-## Activity labels
 
