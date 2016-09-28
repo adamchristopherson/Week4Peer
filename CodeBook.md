@@ -83,6 +83,16 @@ The following feature variables are described more thoroughly in `/UCI HAR Datas
 * `fBodyBodyGyroJerkMag-mean()` 
 * `fBodyBodyGyroJerkMag-std()`
 
+The data in `tidy.txt` is obtained from the provided data by performing the following operations:
+
+1. Training data, subject and activity are read into three tables. The columns names of the data table is extracted from the `features.txt`.
+2. The subject and activity are bound onto the data to form a training data set.
+3. The same operations are performed for the test data.
+4. The training and test data sets are combined into one data frame.
+4. The columns in the total data set pertaining to the mean or standard deviation of a measurement are extracted, along with the corresponding activity and subject label. 
+5. The activity and subject are converted to factor variables.
+6. The data is melted, and then cast into a data frame where the first two columns are subject and activity, respectively, and the remaining columns are the average (mean) of the appropriate measurement for a given subject and given activity.
+
 
 
 
